@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create Account</title>
+	<style>
+		/* CSS rules go here */
+		body {
+			background-image: linear-gradient(to bottom, #6c5ce7, #a77bc2);
+			background-size: 100% 300px;
+			background-position: 0% 100%;
+			height: 100vh;
+			margin: 0;
+		}
+
+		.container {
+			width: 80%;
+			margin: 40px auto;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.title {
+			font-family: 'Great Vibes', cursive;
+			font-size: 48px;
+			color: #6c5ce7;
+			text-align: center;
+			margin: 0;
+		}
+
+		/* Add more CSS rules as needed */
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1 class="title">Create Account</h1>
+		<form id="create-account-form">
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+			<label for="profile-picture">Profile Picture:</label>
+			<input type="file" id="profile-picture" name="profile-picture" accept="image/*" required>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+			<label for="repeat-password">Repeat Password:</label>
+			<input type="password" id="repeat-password" name="repeat-password" required>
+			<label>
+				<input type="checkbox" checked="checked" name="remember" style="margin-bottom: 15px"> Remember me
+			</label>
+			<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+			<button type="submit" class="signup">Sign Up</button>
+		</form>
+	</div>
+
+	<script>
+		// JavaScript code goes here
+		const createAccountForm = document.getElementById('create-account-form');
+
+		createAccountForm.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const username = createAccountForm['username'].value;
+			const profilePicture = createAccountForm['profile-picture'].files[0];
+			const password = createAccountForm['password'].value;
+			const repeatPassword = createAccountForm['repeat-password'].value;
+
+			// Validate the form data
+			if (password !== repeatPassword) {
+				alert('Passwords do not match');
+				return;
+			}
+
+			// Save the username, profile picture, and password in local storage
+			localStorage.setItem('username', username);
+			localStorage.setItem('profilePicture', URL.createObjectURL(profilePicture));
+			localStorage.setItem('password', password);
+
+			// Redirect to the dashboard page
+			window.location.href = 'dashboard.html';
+		});
+	</script>
+</body>
+</html>
