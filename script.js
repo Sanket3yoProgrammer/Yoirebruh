@@ -1,11 +1,4 @@
 const loginForm = document.getElementById('login-form');
-const createAccountLink = document.getElementById('create-account-link');
-
-createAccountLink.addEventListener('click', (e) => {
-  e.preventDefault();
-  // Redirect to the create account page
-  window.location.href = 'create-account.html';
-});
 
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault();
