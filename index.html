@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>The Purple Hand Gang</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div class="container">
-		<div class="header">
-			<h1 class="title">THE PURPLE HAND GANG</h1>
-		</div>
-		<div class="login-form">
-			<form>
-				<input type="text" id="username" placeholder="Enter your name">
-				<input type="password" id="password" placeholder="Enter your password">
-				<input type="file" id="profile-picture" accept="image/*">
-				<button id="login-btn">Login</button>
-			</form>
-		</div>
-	</div>
-
-	<script src="script.js"></script>
-</body>
+  <head>
+    <title>The Purple Hand Gang - Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Login</h1>
+      <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <label for="profile-picture">Profile Picture:</label>
+        <input type="file" id="profile-picture" name="profile-picture" accept="image/*" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="create-account-link">Create one here</a></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
